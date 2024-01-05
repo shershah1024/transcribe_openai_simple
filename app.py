@@ -18,7 +18,7 @@ client = OpenAI()
 if uploaded_file is not None:
     try:
         # Call to create a transcription using the OpenAI API
-        transcript = openai.audio.transcriptions.create(
+        transcript = client.audio.transcriptions.create(
             model="whisper-1",
             file=uploaded_file,
             response_format="text"
