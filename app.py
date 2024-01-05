@@ -9,11 +9,9 @@ api_key = st.text_input("Enter your OpenAI API key", type="password")
 
 # Only proceed with the rest of the program if the API key is entered
 if api_key:
-    openai = OpenAI(api_key=api_key)
+    client = OpenAI(api_key=api_key)
 
 uploaded_file = st.file_uploader("Upload your audio file", type=['mp3', 'wav', 'ogg'])
-
-client = OpenAI()
 
 if uploaded_file is not None:
     try:
