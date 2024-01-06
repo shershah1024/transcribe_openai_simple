@@ -6,12 +6,12 @@ from st_audiorec import st_audiorec
 st.title('Simple audio transcription')
 
 api_key = st.text_input("Enter your OpenAI API key", type="password")
-
+wav_audio_data = st_audiorec()
 
 if api_key:
     client = OpenAI(api_key=api_key)
 
-    wav_audio_data = st_audiorec()
+    #wav_audio_data = st_audiorec()
 
     if wav_audio_data is not None:
         st.audio(wav_audio_data, format='audio/wav')
